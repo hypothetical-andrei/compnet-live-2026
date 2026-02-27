@@ -1,0 +1,7 @@
+services:
+  ubuntu:
+    image: ubuntu:24.04
+    container_name: minimal_ubuntu
+    stdin_open: true # Equivalent to -i
+    tty: true        # Equivalent to -t
+    restart: always
