@@ -3,7 +3,7 @@ import socket
 # Adresa serverului:
 # - "127.0.0.1" înseamnă "localhost" (aceeași mașină)
 # - dacă serverul rulează pe alt host, aici puneți IP-ul acelui host.
-HOST = "127.0.0.1"
+HOST = "172.30.0.10"
 
 # Portul pe care ascultă serverul.
 # Trebuie să fie același cu portul din serverul TCP (ex: 12345).
