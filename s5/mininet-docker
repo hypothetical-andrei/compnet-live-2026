@@ -1,0 +1,5 @@
+docker run -it --rm \
+    --privileged \
+    -v /lib/modules:/lib/modules \
+    iwaseyusuke/mininet \
+    mn --topo linear,3
