@@ -1,0 +1,17 @@
+services:
+  node1:
+    build: ./nodes/node1
+    networks:
+      - sshnet
+
+  controller:
+    build: ./controller
+    volumes:
+      - ./payload:/payload
+    depends_on:
+      - node1
+    networks:
+      - sshnet
+
+networks:
+  sshnet:

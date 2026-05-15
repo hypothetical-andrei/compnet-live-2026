@@ -1,0 +1,38 @@
+services:
+  web1:
+    image: python:3.11-alpine
+    working_dir: /app
+    volumes:
+      - ./web1:/app:ro
+    command: ["python", "-m", "http.server", "8000"]
+    expose:
+      - "8000"
+
+  web2:
+    image: python:3.11-alpine
+    working_dir: /app
+    volumes:
+      - ./web2:/app:ro
+    command: ["python", "-m", "http.server", "8000"]
+    expose:
+      - "8000"
+
+  web3:
+    image: python:3.11-alpine
+    working_dir: /app
+    volumes:
+      - ./web3:/app:ro
+    command: ["python", "-m", "http.server", "8000"]
+    expose:
+      - "8000"
+
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8080:80"
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf:ro
+    depends_on:
+      - web1
+      - web2
+      - web3
